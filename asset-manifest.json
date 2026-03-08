@@ -1,10 +1,13 @@
 {
   "files": {
+    "main.css": "/Via22/static/css/main.77fc8431.css",
     "main.js": "/Via22/static/js/main.a7a32552.js",
     "index.html": "/Via22/index.html",
+    "main.77fc8431.css.map": "/Via22/static/css/main.77fc8431.css.map",
     "main.a7a32552.js.map": "/Via22/static/js/main.a7a32552.js.map"
   },
   "entrypoints": [
+    "static/css/main.77fc8431.css",
     "static/js/main.a7a32552.js"
   ]
 }
