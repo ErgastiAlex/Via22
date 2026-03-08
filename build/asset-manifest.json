@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/via22/static/js/main.c9e63d67.js",
-    "index.html": "/via22/index.html",
-    "main.c9e63d67.js.map": "/via22/static/js/main.c9e63d67.js.map"
+    "main.js": "/Via22/static/js/main.0a7b27e8.js",
+    "index.html": "/Via22/index.html",
+    "main.0a7b27e8.js.map": "/Via22/static/js/main.0a7b27e8.js.map"
   },
   "entrypoints": [
-    "static/js/main.c9e63d67.js"
+    "static/js/main.0a7b27e8.js"
   ]
 }

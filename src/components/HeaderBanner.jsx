@@ -12,9 +12,7 @@ export default function HeaderBanner() {
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
 
         <div className="flex justify-center mb-12">
-          <img
-            src="/logo-via22.png"
-            alt="Logo Via 22 APS"
+          <img src={`${process.env.PUBLIC_URL}/logo-via22.png`}   
             className="h-28 md:h-36 w-auto object-contain drop-shadow-xl"
           />
         </div>
