@@ -48,7 +48,7 @@ export default function LocationPopup({ location }) {
       </div>
 
       {/* Buttons */}
-      <div className="mt-10 flex flex-col gap-4">
+      {/* <div className="mt-10 flex flex-col gap-4">
 
         <button className="flex items-center justify-center gap-3 px-6 py-3 rounded-2xl bg-blue-900 text-white font-medium transition-all duration-300 hover:scale-105 hover:bg-blue-800 shadow-md">
           <Info size={18} />
@@ -65,7 +65,7 @@ export default function LocationPopup({ location }) {
           Dove dormire
         </button>
 
-      </div>
+      </div> */}
     </div>
   );
 }

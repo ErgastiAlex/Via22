@@ -1,65 +1,131 @@
-export default function HeaderBanner() {
+export default function HeaderBanner({ lang, setLang }) {
+  const content = {
+    it: {
+      quote: "“Via 22 non è una scorciatoia. È un momento di riflessione.”",
+      route: "Parma → Colorno · Torrente Parma",
+      small: "Associazione di Promozione Sociale · Parma",
+      title1: "Un fiume",
+      title2: "non si ferma",
+      title3: "mai.",
+      desc:
+        "22 chilometri lungo il Torrente Parma. Dal cuore della città alla Reggia di Colorno. Natura, storia, comunità.",
+      km: "Chilometri",
+      loc: "Località",
+      oasi: "Oasi Naturali",
+    },
+    en: {
+      quote: "“Via 22 is not a shortcut. It is a moment of reflection.”",
+      route: "Parma → Colorno · Parma Stream",
+      small: "Social Promotion Association · Parma",
+      title1: "A river",
+      title2: "never",
+      title3: "stops.",
+      desc:
+        "22 kilometers along the Parma Stream. From the heart of the city to the Reggia di Colorno. Nature, history, community.",
+      km: "Kilometers",
+      loc: "Locations",
+      oasi: "Nature Oases",
+    },
+  };
+
+  const t = content[lang];
+
   return (
-    <div className="header-banner relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen bg-[#476B4A] text-[#EDEBE6] flex flex-col">
+  {/* Background waves */}
+  <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-10">
+    <svg
+      className="w-full h-full"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <pattern
+          id="wavePattern"
+          x="0"
+          y="0"
+          width="200"
+          height="60"
+          patternUnits="userSpaceOnUse"
+        >
+          <path
+            d="M0 30 Q 25 10 50 30 T 100 30 T 150 30 T 200 30"
+            fill="none"
+            stroke="white"
+            strokeWidth="1"
+          />
+        </pattern>
+      </defs>
 
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#fdfaf3] via-[#f7f3e9] to-[#efe8d8]" />
-
-      {/* Decorative shapes */}
-      <div className="absolute -top-32 -left-32 w-96 h-96 bg-yellow-300/30 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-0 w-[30rem] h-[30rem] bg-green-400/20 rounded-full blur-3xl" />
-
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-
-        <div className="flex justify-center mb-12">
+      <rect width="100%" height="100%" fill="url(#wavePattern)" />
+    </svg>
+</div>
+      {/* Top Bar */}
+      <div className="flex items-center justify-between px-8 md:px-16 pt-8">
+        
+        {/* Logo (solo desktop) */}
+        <div className="hidden md:block">
           <img src={`${process.env.PUBLIC_URL}/logo-via22.png`}   
-            className="h-28 md:h-36 w-auto object-contain drop-shadow-xl"
+            alt="Via22"
+            className="h-10 w-auto opacity-90"
           />
         </div>
 
-        <h1 className="text-5xl md:text-7xl font-black italic text-blue-900">
-          Via 22 APS
-        </h1>
-
-        <p className="mt-4 uppercase tracking-[0.4em] text-sm text-blue-900/60">
-          Associazione di Promozione Sociale
-        </p>
-                {/* PARTITA IVA */}
-        <p className="mt-3 text-sm text-blue-900/50 tracking-wide">
-          C.F. 03133020341
-        </p>
-
-        <div className="w-24 h-[2px] bg-blue-900/20 mx-auto my-10" />
-
-        <p className="text-lg md:text-xl leading-relaxed text-blue-900/90 font-light">
-          Via 22 APS è un'Associazione nata a Rivarolo di Torrile,
-          nel cuore della Bassa Parmense. Il nostro progetto è semplice
-          nella forma, ambizioso nella sostanza: creare un corridoio verde
-          di 22 km lungo il Torrente Parma che unisca borghi, oasi naturali,
-          chiese medievali e sapori autentici della Food Valley.
-        </p>
-
-        <p className="text-lg md:text-xl leading-relaxed text-blue-900/90 font-light mt-6">
-          Siamo volontari, guide, appassionati di natura e storia locale.
-          Crediamo che il territorio sia il miglior racconto di sé stesso:
-          basta avere un percorso per scoprirlo.
-        </p>
-
-        <div className="mt-16 backdrop-blur-md bg-white/60 border border-white/40 rounded-3xl px-10 py-8 shadow-xl inline-block">
-          <p className="uppercase tracking-widest text-sm text-blue-900/70">
-            Sostieni i nostri progetti
-          </p>
-
-          <p className="mt-4 text-2xl md:text-3xl font-mono font-bold text-blue-900">
-            IT12X1234567890123456789012
-          </p>
-
-          <p className="mt-4 text-sm italic text-blue-900/60">
-            Grazie per il tuo prezioso supporto ❤️
-          </p>
-        </div>
 
       </div>
-    </div>
+
+      {/* Hero content */}
+      <div className="flex-1 flex flex-col justify-center px-8 md:px-16 max-w-5xl">
+
+        <div className="text-xs tracking-[0.4em] uppercase opacity-70 mb-6">
+          {t.small}
+        </div>
+
+        <h1 className="text-5xl md:text-[110px] leading-[0.95] font-serif font-light">
+          {t.title1}
+        </h1>
+        <h1 className="text-5xl md:text-[110px] leading-[0.95] italic font-serif font-light opacity-80">
+          {t.title2}
+        </h1>
+        <h1 className="text-5xl md:text-[110px] leading-[0.95] font-serif font-light">
+          {t.title3}
+        </h1>
+
+        <p className="mt-10 text-lg md:text-xl max-w-2xl opacity-80 leading-relaxed">
+          {t.desc}
+        </p>
+      </div>
+
+      {/* Metriche centrali in basso */}
+      <div className="pb-12 flex justify-center">
+        <div className="flex gap-12 md:gap-24 text-center">
+          <div>
+            <div className="text-4xl md:text-5xl font-serif">22</div>
+            <div className="text-xs tracking-[0.3em] uppercase opacity-70 mt-2">
+              {t.km}
+            </div>
+          </div>
+
+          <div>
+            <div className="text-4xl md:text-5xl font-serif">9</div>
+            <div className="text-xs tracking-[0.3em] uppercase opacity-70 mt-2">
+              {t.loc}
+            </div>
+          </div>
+
+          <div>
+            <div className="text-4xl md:text-5xl font-serif">2</div>
+            <div className="text-xs tracking-[0.3em] uppercase opacity-70 mt-2">
+              {t.oasi}
+            </div>
+          </div>
+        </div>
+      </div>
+            {/* Fascia citazione */}
+      <div className="bg-[#9C7A1F] text-[#F4EDE2] py-4 px-8 md:px-16 flex justify-between items-center text-sm md:text-base tracking-wide">
+        <div className="italic">{t.quote}</div>
+        <div className="hidden md:block opacity-80">{t.route}</div>
+      </div>
+
+    </section>
   );
 }
